@@ -1,0 +1,120 @@
+@import "../../scss/responsive.scss";
+
+.dataTableLandlord {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+
+    @include md {
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .details {
+    
+        overflow-y: auto;
+        padding: 20px 0;
+
+        @include md {
+            flex: none;
+            height: max-content;
+        }
+
+        .wrapper {
+            padding-right: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h1 {
+                    font-weight: 300;
+                }
+
+                button {
+                    padding: 12px 24px;
+                    background-color: #00bbb5;
+                    border: none;
+                    cursor: pointer;
+
+                    svg {
+                        color: #000;
+                    }
+                }
+            }
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                span {
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                }
+
+                button {
+                    width: 100px;
+                    background-color: #00bbb5;
+                    border: none;
+                    cursor: pointer;
+                    color: #fff;
+                    padding: 10px;
+                }
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .table {
+        flex: 18;
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            button {
+width: 50px;
+    background-color: #00bbb5;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    height: 50px;
+    border-radius: 100%;
+
+    svg {
+                        color: #000;
+                    }
+    }
+        }
+    }
+
+    .chatContainer {
+        flex: 2;
+        background-color: #e0f8f6;
+        height: 100%;
+
+        @include md {
+            flex: none;
+            height: max-content;
+        }
+
+        .wrapper {
+            padding: 0 20px;
+            height: 100%;
+        }
+    }
+}

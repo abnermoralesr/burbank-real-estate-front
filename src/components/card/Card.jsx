@@ -3,34 +3,28 @@ import './card.scss';
 
 function Card({item}) {
   return (
-    <div className='card'>
+    <div className="card">
       <Link to={`/propiedad/${item.id}`} className="imageContainer">
-        <img src={item.img} alt={item.title} />
+        <img src={item.img} alt="" />
       </Link>
       <div className="textContainer">
-        <h2 className='title'>
-          <Link to={`/propiedad/${item.id}`}>
-            {item.title}
-          </Link>
+        <h2 className="title">
+          <Link to={`/${item.id}`}>{item.title}</Link>
         </h2>
-        <p className='address'>
-            <img src="/pin.png" alt="" />
-            <span>{item.address}</span>
+        <p className="address">
+          <img src="/pin.png" alt="" />
+          <span>{item.address}</span>
         </p>
-        <p className='price'>
-          <Link to={`/propiedad/${item.id}`}>
-            <span>${item.price}</span>
-          </Link>
-        </p>
-        <div className='bottom'>
+        <p className="price">$ {item.price.toLocaleString(undefined, {maximumFractionDigits:2})}</p>
+        <div className="bottom">
           <div className="features">
             <div className="feature">
               <img src="/bed.png" alt="" />
-              <span>{item.bedroom} cuartos</span>
+              <span>{item.bedroom} bedroom</span>
             </div>
             <div className="feature">
               <img src="/bath.png" alt="" />
-              <span>{item.bathroom} baños</span>
+              <span>{item.bathroom} bathroom</span>
             </div>
           </div>
           <div className="icons">

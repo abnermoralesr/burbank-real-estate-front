@@ -36,9 +36,13 @@
 
                 button {
                     padding: 12px 24px;
-                    background-color: #fece51;
+                    background-color: #00bbb5;
                     border: none;
                     cursor: pointer;
+
+                    svg {
+                        color: #000;
+                    }
                 }
             }
 
@@ -53,6 +57,15 @@
                     gap: 20px;
                 }
 
+                button {
+                    width: 100px;
+                    background-color: #00bbb5;
+                    border: none;
+                    cursor: pointer;
+                    color: #fff;
+                    padding: 10px;
+                }
+
                 img {
                     width: 40px;
                     height: 40px;
@@ -65,7 +78,7 @@
 
     .chatContainer {
         flex: 2;
-        background-color: #fcf5f3;
+        background-color: #e0f8f6;
         height: 100%;
 
         @include md {

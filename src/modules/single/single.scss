@@ -58,7 +58,7 @@
 
                         .price {
                             padding: 5px;
-                            background-color: rgba(254, 205, 81, 0.438);
+                            background-color: rgba(0, 187, 181, 0.35);
                             border-radius: 5px;
                             width: max-content;
                             font-size: 20px;
@@ -74,7 +74,7 @@
                         gap: 20px;
                         padding: 0 50px;
                         border-radius: 10px;
-                        background-color: rgba(254, 205, 81, 0.438);
+                        background-color: rgba(0, 187, 181, 0.35);
                         font-weight: 600;
 
                         img {
@@ -97,7 +97,7 @@
 
     .features {
         flex: 2;
-        background-color: #fcf5f3;
+        background-color: #e0f8f6;
         height: 100%;
         overflow-y: auto;
 
@@ -129,7 +129,7 @@
                 gap: 10px;
 
                 img {
-                    background-color: rgba(254, 205, 81, 0.209);
+                    background-color: rgba(0,187,181,0.35);
                 }
 
                 .featureText {
@@ -194,7 +194,7 @@
                     align-items: center;
                     gap: 5px;
                     background-color: white;
-                    border: 1px solid #fece51;
+                    border: 1px solid #00bbb5;
                     border-radius: 5px;
                     cursor: pinter;
 

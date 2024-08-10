@@ -2,33 +2,35 @@ import Slider from '../../components/slider/Slider'
 import './single.scss'
 import { singlePostData, userData } from '../../lib/dummy'
 import Map from "../../components/map/Map";
+import { useLoaderData } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 
 function Single() {
+  const propertyData = useLoaderData();
 
+  console.log(propertyData);
 
   return (
     <div className='single'>
       <div className="details">
         <div className="wrapper">
-          <Slider images={singlePostData.images}/>
+          <Slider images={propertyData.images}/>
           <div className="info">
             <div className="top">
               <div className="post">
-                <h1>{singlePostData.title}</h1>
+                <h1>{propertyData.title}</h1>
                 <div className="address">
                   <img src="/pin.png" alt="" />
-                  <span>{singlePostData.address}</span>
+                  <span>{propertyData.address}</span>
                 </div>
-                <div className="price">$ {singlePostData.price}</div>
+                <div className="price">$ {propertyData.price}</div>
               </div>
               <div className="user">
-                <img src={userData.img} alt="" />
-                <span>{userData.name}</span>
+                <img src={propertyData.UserAssigned.avatar || "/noavatar.jpeg"} alt="" />
+                <span>{propertyData.UserAssigned.username}</span>
               </div>
             </div>
-            <div className="bottom">
-              {singlePostData.description}
-            </div>
+            <div className="bottom" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(propertyData.description)}}></div>
           </div>
         </div>
       </div>
@@ -99,7 +101,7 @@ function Single() {
           </div>
           <p className="title">Ubicacion</p>
           <div className="mapContainer">
-            <Map items={[singlePostData]}/>
+            <Map items={[propertyData]}/>
           </div>
           <div className="buttons">
             <button>

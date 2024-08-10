@@ -1,6 +1,6 @@
 @import "../../scss/responsive.scss";
 
-#navbar {
+#custom-navbar {
     display: flex; 
     justify-content: space-between;
     height: 100px;
@@ -54,7 +54,7 @@
         align-items: center;
         justify-content: flex-end;
         height: 100%;
-        background-color: #fcf5f3;
+        background-color: #e0f8f6;
 
         @include md {
             background-color: transparent;
@@ -65,7 +65,7 @@
             margin: 20px;
 
             &.sign {
-                background-color: #fece51;
+                background-color: #00bbb5;
             }
         }
 
@@ -90,7 +90,7 @@
 
             .profile {
                 padding: 12px 24px;
-                background-color: #fece51;
+                background-color: #00bbb5;
                 cursor: pointer;
                 border: none;
                 position: relative;

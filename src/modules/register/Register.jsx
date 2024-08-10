@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import baseUrl from '../../../../api/core/baseUrl';
 import './register.scss';
-import axios from "axios";
+import apiRequest from '#services/apiRequest';
 
 function Register() {
     const [error, setError] = useState("");
     const [success, setSuccess] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
 
         const formData = new FormData(e.target);
         const username = formData.get("username");
@@ -18,7 +19,7 @@ function Register() {
         const branchId = formData.get("branch");
         
         try {
-            const res = await axios.post(baseUrl + "auth/register", {
+            const res = await apiRequest.post("auth/register", {
                 username,
                 email,
                 password,
@@ -31,6 +32,8 @@ function Register() {
         } catch (error) {
             console.log(error);
             setError(error.response.data.message);
+        } finally {
+            setIsLoading(false);
         }
     };
 
@@ -40,7 +43,7 @@ function Register() {
                 <form onSubmit={handleSubmit}>
                     <h1>Crear Usuario</h1>
                     <input name="username" type="text" placeholder="Usuario" />
-                    <input name="email" type="text" placeholder="E-mail" />
+                    <input name="email" type="email" placeholder="E-mail" />
                     <input name="password" type="password" placeholder="Password" />
                     <select name="type" id="type" placeholder="Tipo de Usuario">
                         <option value="">Tipo de Usuario</option>
@@ -52,7 +55,8 @@ function Register() {
                         <option value="">Sucursal</option>
                         <option value="1">Matriz</option>
                     </select>
-                    <button >Crear</button>
+                    <button disabled={isLoading} >Crear</button>
+                    <img src="/loader.svg" alt="logo" className={"loader " + (isLoading ? "visible" : "hidden")} />
                     {error && <span className='error'>{error}</span>}
                     {success && <span className='success'>{success}</span>}
                 </form>
